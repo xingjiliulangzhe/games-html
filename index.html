@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏展示中心 - 各类游戏展示列表</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="logo">
+                    <span class="logo-icon">🎮</span>
+                    游戏展示中心
+                </h1>
+                <p class="subtitle">探索精彩游戏世界，发现你的下一款最爱 | 共收录 <span id="total-games">50</span> 款游戏</p>
+            </div>
+        </header>
+        
+        <main class="app-main">
+            <div class="game-showcase">
+                <!-- 筛选器 -->
+                <div class="game-filter">
+                    <div class="search-bar">
+                        <input 
+                            type="text" 
+                            id="search-input"
+                            placeholder="搜索游戏名称或描述..."
+                            class="search-input"
+                        >
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>游戏类型筛选</h4>
+                        <div class="genre-filter" id="genre-filter">
+                            <!-- 游戏类型按钮将通过JS动态生成 -->
+                        </div>
+                    </div>
+                    
+                    <div class="stats">
+                        找到 <span id="filtered-count">50</span> 款游戏
+                    </div>
+                </div>
+                
+                <!-- 游戏列表 -->
+                <div id="game-grid" class="game-grid">
+                    <!-- 游戏卡片将通过JS动态生成 -->
+                </div>
+                
+                <!-- 分页控件 -->
+                <div class="game-pagination">
+                    <div class="pagination-info">
+                        显示 <span id="start-item">1</span>-<span id="end-item">12</span> 条，共 <span id="total-items">50</span> 条记录
+                    </div>
+                    
+                    <div class="pagination-controls">
+                        <button 
+                            id="prev-page"
+                            class="pagination-button"
+                            disabled
+                        >
+                            ◀ 上一页
+                        </button>
+                        
+                        <div class="page-numbers" id="page-numbers">
+                            <!-- 页码按钮将通过JS动态生成 -->
+                        </div>
+                        
+                        <button 
+                            id="next-page"
+                            class="pagination-button"
+                        >
+                            下一页 ▶
+                        </button>
+                    </div>
+                    
+                    <div class="page-size-selector">
+                        <label for="pageSize">每页显示：</label>
+                        <select 
+                            id="pageSize" 
+                            class="page-size-select"
+                        >
+                            <option value="6">6</option>
+                            <option value="12" selected>12</option>
+                            <option value="18">18</option>
+                            <option value="24">24</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>© 2023 游戏展示中心 | 基于原生HTML/CSS/JS构建 | 支持筛选与分页</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 广告脚本 -->
+    <script src="https://affiliates.serv.adse.site/assets/ads/ad.js" class="adScriptClass" async></script>
+    
+    <!-- 游戏数据 -->
+    <script src="data.js"></script>
+    
+    <!-- 主应用逻辑 -->
+    <script src="app.js"></script>
+</body>
+</html>
